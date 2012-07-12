@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--
+                                         
+  |\/| [- |) | /\ |-| /\ ( /< 
+		mediahack.com
+    much <3 @ komodomedia.com
+
+    This has been a mediaHACK and KomodoMedia collab. 
+    Awesome-sauce and skizzizles. Spoooooooooooooooooooon!
+	
+-->
+<html>
+	<head>        
+		<meta charset="utf-8" />
+		<title>{Title}</title>
+		<link rel="shortcut icon" href="{Favicon}" />
+		<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+		
+		{block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+		
+<meta name="text:Disqus Shortname" content="mediahacked" />
+		 <meta name="if:EnableArchiveLink" content="1"/>
+		
+		<link href="http://mediahack.github.com/cdn/projects/mediahack/tumblr/themes/gameboy/css/reset.css" rel="stylesheet"></link>
+		<link href="http://mediahack.github.com/cdn/projects/mediahack/tumblr/themes/gameboy/css/gb.css" rel="stylesheet"></link>
+		
+		<!--[if IE]>
+		<link href="http://files.mediahack.com/themes/tumblr/gb/ie.css" rel="stylesheet"></link>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+	</head>
+	<body>
+		
+		<div id="site">
+		
+			<header>
+						
+				<div class="gb">
+					
+					<h1><a href="/">mediahack</a></h1>
+					
+					<p>Skull-smashing mad computer scientist in your base</p>
+
+					
+					{block:HasPages}
+					<nav class="main">
+						
+						<ul>
+							{block:Pages}
+							<li class="{Label}">
+								<a href="{URL}">{Label}</a>
+							</li>
+							{/block:Pages}
+							
+							{block:IfEnableArchiveLink}
+							<li class="archive">
+								<a href="/archive">archive</a>
+							</li>
+							{/block:IfEnableArchiveLink}
+						</ul>
+						
+					</nav>
+					{/block:HasPages}				
+				
+				</div>
+				
+				<nav class="connect">
+									
+						<ul>
+							<li class="twitter">
+								<a href="http://twitter.com/mediahack"><span>Follow Me</span></a>
+							</li>
+							<li class="forrst">
+								<a href="http://forrst.com/people/mediaHACK"><span>Forrst</span></a>
+							</li>
+							<li class="dribbble">
+								<a href="http://www.dribbble.com/players/mediaHACK"><span>Dribbble</span></a>
+							</li>
+						</ul>
+				
+				</nav>
+
+				<p class="info">Dot Matrix with Stereo Sound</p>
+			
+			</header>
+			
+			<section class="posts">
+				
+				<aside>
+					
+					<nav class="dpad">
+						<ul>
+							<li class="home">
+								<a href="/">Home</a>
+							</li>
+							{block:Pagination} 
+							<li class="prev">
+								<a href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}">Prev</a>
+							</li>
+							<li class="next">
+								<a href="{block:NextPage}{NextPage}{/block:NextPage}">Next</a>
+							</li>
+							{/block:Pagination} 
+							{block:PermalinkPagination}
+							<li class="prev">
+								<a href="{block:NextPost}{NextPost}{/block:NextPost}">Prev</a>
+							</li>
+							<li class="next">
+								<a href="{block:PreviousPost}{PreviousPost}{/block:PreviousPost}">Next</a>
+							</li>
+							{/block:PermalinkPagination}						
+							
+							<li class="pwn">
+								<a href="#">Pwn</a>
+							</li>
+						</ul>
+					</nav>
+					
+				</aside>
+				  
+				
+				{block:Posts}
+					
+					{block:Photo}
+						<article class="photo">
+							<div class="post-meta">							
+								 
+								{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</span>{/block:HasTags}
+															 
+								 <span class="when">
+									{TimeAgo}.
+								 </span> 
+								 
+								 <span class="likes">
+									<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+								 </span>
+								 
+							</div>
+							
+							<figure class="photo">
+								<div>
+									{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+								</div>
+								
+								{block:Caption} 
+								<figcaption>
+									{Caption}
+								</figcaption>   
+								{/block:Caption} 							
+							</figure>
+							
+							{block:PermalinkPage}
+								{block:PostNotes} 
+								<div id="notes">
+									<h3>Notes</h3>
+									{PostNotes}
+								</div>
+								{/block:PostNotes} 
+							{/block:PermalinkPage}
+							
+						</article>
+					{/block:Photo}
+					
+					{block:Video}
+						<article class="video">		
+							
+							<div class="post-meta">							
+								
+								{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</span>{/block:HasTags}
+								
+								 
+								 <span class="when">
+									{TimeAgo}.
+								 </span> 
+								 
+								 <span class="likes">
+									<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+								 </span>
+							</div>
+							
+							<figure class="video">
+								<div>
+									{Video-500}
+								</div>
+								
+								{block:Caption}							
+								<figcaption>
+									{Caption}
+								</figcaption>           
+								{/block:Caption}
+								
+							</figure>
+							
+							{block:PermalinkPage}
+								{block:PostNotes} 
+								<div id="notes">
+									<h3>Notes</h3>
+									{PostNotes}
+								</div>
+								{/block:PostNotes} 
+							{/block:PermalinkPage}
+							
+						</article>	
+					{/block:Video}
+					
+						
+					{block:Text}                       
+						
+						<article class="text">
+				
+							{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+							
+							<div class="post-meta">							
+								
+								{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}</span>{/block:HasTags}
+															 
+								 <span class="when">
+									{TimeAgo}.
+								 </span> 
+								 
+								 <span class="likes">
+									<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+								 </span>							 
+							</div>
+							
+							{Body}
+							
+							{block:PermalinkPage}
+								{block:PostNotes} 
+								<div id="notes">
+									<h3>Notes</h3>
+									{PostNotes}
+								</div>
+								{/block:PostNotes} 
+							{/block:PermalinkPage}
+							
+							
+						</article>
+						
+					{/block:Text}
+							
+			
+				{/block:Posts}
+			</section>
+			
+			<footer>
+				
+				<a href="http://komodomedia.com" class="komodo">Design by Komodo</a>
+				
+			</footer>	
+
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script src="http://files.mediahack.com/themes/tumblr/gb/js/gb.js"></script>
+                <script src="http://nescode.googlecode.com/files/nescode.min.js"></script>
+                <script src="http://files.mediahack.com/themes/tumblr/gb/js/2633AD.min.js"></script>
+<script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-18066280-1']);
+          _gaq.push(['_setDomainName', 'mediahack.com']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+	</body>
+</html>
