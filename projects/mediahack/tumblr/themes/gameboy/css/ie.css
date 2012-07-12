@@ -1,0 +1,27 @@
+img{
+	-ms-interpolation-mode:bicubic;
+}
+#site{
+	left: -200px;
+}
+footer{
+	margin-left: 200px;
+}
+header{
+	top: 56px;
+}
+.gb{
+	margin-top: 100px;
+}
+.posts{
+	zoom:1;
+	display: block;
+	position: relative;
+	top: 56px;
+	left: 200px;
+}
+footer .komodo:hover,
+button,
+.btn{
+	color: #fff;
+}
