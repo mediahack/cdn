@@ -919,7 +919,7 @@ ul.myApps li a span, a#appInspirabot, a#appFight, a#appNes, a#appHcs, a#appTina,
     display: block;
     width: 95px;
     height: 109px;
-    background-image: url('http://mediahack.github.com/cdn/projects/mediahack/tumblr/themes/gameboy/img/app_sprites.png');        
+    background-image: url('../img/app_sprites.png');        
     background-position: left top;
     text-indent: -9000px;
     outline: none;
