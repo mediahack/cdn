@@ -655,6 +655,10 @@ article .post-meta:hover a{
 	color: rgba(0,0,0,0.6);
 }
 
+.reqs{
+	color: #A51E5A;
+}
+
 article code,
 article .code{
 	background: rgba(0,0,0,0.05);
