@@ -40,12 +40,16 @@ function MyCheats(){
 			audio.appendChild(emb);
 
 		    audio.id = id; 
-		    audio.src = aUrl; 
-		    audio.autostart = settings.autostart || false; 
+		    audio.autostart = settings.autostart || true; 
 		    audio.hidden = settings.hidden || true; 
 		    audio.loop = settings.loop || false;
-		    audio.onload = ( callback != undefined )  ? callback() : function(){};
-			
+		    
+			audio.preload = "auto";
+			audio.oncanplay = function(){
+				if( callback != undefined )  callback();
+				else audio.play();
+			};
+
             document.getElementsByTagName("body")[0].appendChild( audio );		
 
             obj[ id ] = document.getElementById(id);
