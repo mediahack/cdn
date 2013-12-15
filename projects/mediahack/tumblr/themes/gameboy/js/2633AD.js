@@ -3,7 +3,8 @@
 * @project  NESCode
 * @author <codes>      mediaHACK - http://mediahack.com
 * @date         2011.01.24
-* @version      11.01.24
+* @version      13.12.15
+* @update		2013.12.15
 *
 * @licence  New BSD License.
 * @licence  Creative-Commons BY
@@ -22,8 +23,28 @@ function MyCheats(){
             var obj = this;
             var settings = settings || {};
             var id = settings.id || "cheatAudio";
-            var audio = document.getElementById( id ) || document.createElement("embed");								
-            
+            var audio = document.getElementById(id) || document.createElement("audio");				
+		
+			var src1 = document.getElementById(id+"_src1") || document.createElement("source");
+				src1.id = "_30lives_src1";
+				src1.src = aUrl;
+				src1.type = 'audio/mpeg; codecs="mp3"';
+
+			var src2 = document.getElementById(id+"_src2") || document.createElement("source");
+				src2.id = "_30lives_src2";
+				src2.src = aUrl;
+				src2.type = 'audio/ogg; codecs="vorbis"';
+
+			audio.appendChild(src2);
+			audio.appendChild(src1);
+
+			var emb = document.getElementById(id+"_emb") || document.createElement("embed");
+			emb.width = 100;
+			emb.height = 50;
+			emb.src = aUrl;
+
+			audio.appendChild(emb);
+
 		    audio.id = id; 
 		    audio.src = aUrl; 
 		    audio.autostart = settings.autostart || false; 
